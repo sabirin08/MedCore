@@ -69,15 +69,13 @@ CREATE TABLE Payment (
     FOREIGN KEY (Appointment_ID) REFERENCES Appointment(Appointment_number) ON DELETE CASCADE
 );
 
--- Create indexes for better query performance
 CREATE INDEX idx_patient_name ON Patient(Last_name, First_name);
 CREATE INDEX idx_provider_specialty ON Provider(Specialty);
 CREATE INDEX idx_appointment_date ON Appointment(Appointment_date);
 CREATE INDEX idx_medical_record_patient ON Medical_Record(Patient_id);
 CREATE INDEX idx_payment_status ON Payment(payment_status);
 
--- Insert sample data for testing
--- Sample Patients
+-- Patients
 INSERT INTO Patient (First_name, Last_name, DOB, Gender, Phone_Number, Address) VALUES
 ('John', 'Smith', '1985-03-15', 'Male', '555-0101', '123 Main St, City, ST 12345'),
 ('Sarah', 'Johnson', '1990-07-22', 'Female', '555-0102', '456 Oak Ave, City, ST 12346'),
@@ -85,7 +83,7 @@ INSERT INTO Patient (First_name, Last_name, DOB, Gender, Phone_Number, Address) 
 ('Emily', 'Brown', '1995-05-30', 'Female', '555-0104', '321 Elm St, City, ST 12348'),
 ('David', 'Jones', '1982-09-14', 'Male', '555-0105', '654 Maple Dr, City, ST 12349');
 
--- Sample Providers
+-- Providers
 INSERT INTO Provider (First_name, Last_name, Department, Specialty, Phone_Number, Email) VALUES
 ('Dr. Lisa', 'Anderson', 'Cardiology', 'Cardiologist', '555-0201', 'l.anderson@hospital.com'),
 ('Dr. Robert', 'Taylor', 'Orthopedics', 'Orthopedic Surgeon', '555-0202', 'r.taylor@hospital.com'),
@@ -93,7 +91,7 @@ INSERT INTO Provider (First_name, Last_name, Department, Specialty, Phone_Number
 ('Dr. James', 'Wilson', 'General Medicine', 'General Practitioner', '555-0204', 'j.wilson@hospital.com'),
 ('Dr. Maria', 'Garcia', 'Neurology', 'Neurologist', '555-0205', 'm.garcia@hospital.com');
 
--- Sample Medical Records
+-- Medical Records
 INSERT INTO Medical_Record (Patient_id, Provider_id, Diagnosis, Treatment, Prescription) VALUES
 (1, 1, 'Hypertension', 'Lifestyle modifications and medication', 'Lisinopril 10mg daily'),
 (2, 3, 'Seasonal Allergies', 'Antihistamine therapy', 'Cetirizine 10mg as needed'),
@@ -101,7 +99,7 @@ INSERT INTO Medical_Record (Patient_id, Provider_id, Diagnosis, Treatment, Presc
 (4, 4, 'Annual Checkup', 'Routine examination - all normal', 'None'),
 (5, 5, 'Migraine', 'Pain management and preventive care', 'Sumatriptan 50mg as needed');
 
--- Sample Appointments
+-- Appointments
 INSERT INTO Appointment (Patient_id, Provider_ID, Appointment_date, status, notes) VALUES
 (1, 1, '2025-11-15 10:00:00', 'Scheduled', 'Follow-up for hypertension'),
 (2, 3, '2025-11-16 14:30:00', 'Scheduled', 'New patient consultation'),
@@ -109,7 +107,7 @@ INSERT INTO Appointment (Patient_id, Provider_ID, Appointment_date, status, note
 (4, 4, '2025-11-18 11:00:00', 'Scheduled', 'Annual physical exam'),
 (5, 5, '2025-11-19 15:00:00', 'Scheduled', 'Migraine management');
 
--- Sample Payments
+-- Payments
 INSERT INTO Payment (Patient_ID, Appointment_ID, Payment_detail, Payment_date, Payment_amount, payment_status) VALUES
 (1, 1, 'Consultation fee', '2025-11-15', 150.00, 'Paid'),
 (2, 2, 'New patient visit', '2025-11-16', 200.00, 'Pending'),
