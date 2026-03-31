@@ -1,5 +1,4 @@
 # MedCore
----
 
 ## Overview
 
