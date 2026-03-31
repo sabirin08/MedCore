@@ -1,8 +1,10 @@
 # MedCore
+A hospital management database system built with Python, Flask, and MySQL.
+___
 
 ## Overview
 
-A hospital management database system built with Python, Flask, and MySQL. MedCore provides a RESTful API for managing patients, healthcare providers, medical records, appointments, and payments. Designed as a solo project for CSC 4710 to demonstrate relational database design, CRUD operations, and API development.
+MedCore provides a RESTful API for managing patients, healthcare providers, medical records, appointments, and payments. Designed as a solo project for CSC 4710 to demonstrate relational database design, CRUD operations, and API development.
 
 ## Features
 
