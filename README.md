@@ -1,7 +1,6 @@
 # MedCore
 
-**CSC 4710** — Database Systems, Fall 2025  
-Sabirin Mohamed
+**CSC 4710** — Database Systems, Fall 2025
 
 ---
 
