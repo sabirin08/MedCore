@@ -1,7 +1,4 @@
 # MedCore
-
-**CSC 4710** — Database Systems, Fall 2025
-
 ---
 
 ## Overview
